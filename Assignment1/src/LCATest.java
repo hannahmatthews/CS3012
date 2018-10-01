@@ -49,7 +49,22 @@ public class LCATest {
 		tree.root.right.right = new Node(14);
 		
 		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findLCA(3, 9));
-		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findLCA(45, 93));
+		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findLCA(21, 22));
 	}
 
+	@Test
+	public void testCommonAncestor(){
+		
+		//test tree structure:
+		//		1	
+		//	4		6
+		//6   10   12   14
+
+	}
+	
+	
+	
+	
+	
+	
 }
