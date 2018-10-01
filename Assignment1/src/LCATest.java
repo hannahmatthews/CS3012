@@ -38,7 +38,7 @@ public class LCATest {
 		//test tree structure:
 		//		1	
 		//	4		6
-		//6   10   12   14
+		//8   10   12   14
 		LCA tree = new LCA();
 		tree.root = new Node(1);
 		tree.root.left = new Node(4);
@@ -58,8 +58,7 @@ public class LCATest {
 		//test tree structure:
 		//		1	
 		//	4		6
-		//6   10   12   14
-
+		//8   10   12   14
 		LCA tree = new LCA();
 		tree.root = new Node(1);
 		tree.root.left = new Node(4);
@@ -68,8 +67,12 @@ public class LCATest {
 		tree.root.left.right = new Node(10);
 		tree.root.right.left = new Node(12);
 		tree.root.right.right = new Node(14);
-		
-		
+
+		assertEquals("LCA of 8 and 10: ", 4, tree.findLCA(8, 10).data);
+		assertEquals("LCA of 12 and 14: ", 6, tree.findLCA(12, 14).data);
+		assertEquals("LCA of 8 and 12: ", 1, tree.findLCA(8, 12).data);
+		assertEquals("LCA of 8 and 14: ", 1, tree.findLCA(8, 14).data);
+
 	}
 	
 	
