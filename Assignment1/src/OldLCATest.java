@@ -13,9 +13,9 @@ public class OldLCATest {
 	@Test
 	public void testEmptyTree() {
 		
-		LCA tree = new LCA();
-		assertNull("Find LCA when tree is empty: ", tree.findLCA(1, 2));
-		assertEquals("Find LCA when tree is empty: ", null, tree.findLCA(1, 2) );
+		OldLCA tree = new OldLCA();
+		assertNull("Find OldLCA when tree is empty: ", tree.findOldLCA(1, 2));
+		assertEquals("Find OldLCA when tree is empty: ", null, tree.findOldLCA(1, 2) );
 	}
 
 	@Test
@@ -25,11 +25,11 @@ public class OldLCATest {
 		//			1
 		//		5
 
-		LCA tree = new LCA();
+		OldLCA tree = new OldLCA();
 		tree.root = new Node(1);
 		tree.root.left = new Node(5);
 
-		assertEquals("Find LCA of tree with only root and one child: ", 1, tree.findLCA(1, 5).data);	
+		assertEquals("Find OldLCA of tree with only root and one child: ", 1, tree.findOldLCA(1, 5).data);	
 	}
 	
 	@Test
@@ -39,7 +39,7 @@ public class OldLCATest {
 		//		1	
 		//	4		6
 		//8   10   12   14
-		LCA tree = new LCA();
+		OldLCA tree = new OldLCA();
 		tree.root = new Node(1);
 		tree.root.left = new Node(4);
 		tree.root.right = new Node(6);
@@ -48,8 +48,8 @@ public class OldLCATest {
 		tree.root.right.left = new Node(12);
 		tree.root.right.right = new Node(14);
 		
-		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findLCA(3, 9));
-		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findLCA(21, 22));
+		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findOldLCA(3, 9));
+		assertEquals("Find ancestors of non-existent nodes: ", null, tree.findOldLCA(21, 22));
 	}
 
 	@Test
@@ -59,19 +59,18 @@ public class OldLCATest {
 		//		1	
 		//	4		6
 		//8   10   12   14
-		LCA tree = new LCA();
+		OldLCA tree = new OldLCA();
 		tree.root = new Node(1);
 		tree.root.left = new Node(4);
 		tree.root.right = new Node(6);
 		tree.root.left.left = new Node(8);
-		tree.root.left.right = new Node(10);
 		tree.root.right.left = new Node(12);
 		tree.root.right.right = new Node(14);
 
-		assertEquals("LCA of 8 and 10: ", 4, tree.findLCA(8, 10).data);
-		assertEquals("LCA of 12 and 14: ", 6, tree.findLCA(12, 14).data);
-		assertEquals("LCA of 8 and 12: ", 1, tree.findLCA(8, 12).data);
-		assertEquals("LCA of 8 and 14: ", 1, tree.findLCA(8, 14).data);
+		assertEquals("OldLCA of 8 and 10: ", 4, tree.findOldLCA(8, 10).data);
+		assertEquals("OldLCA of 12 and 14: ", 6, tree.findOldLCA(12, 14).data);
+		assertEquals("OldLCA of 8 and 12: ", 1, tree.findOldLCA(8, 12).data);
+		assertEquals("OldLCA of 8 and 14: ", 1, tree.findOldLCA(8, 14).data);
 
 	}
 	

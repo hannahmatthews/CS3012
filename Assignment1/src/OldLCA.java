@@ -1,3 +1,9 @@
+
+// I have had to rename everything as 'OldLCA' and 'findOldLCA' as I am making a new LCA file, and I want the functions in that 
+// file to be named 'LCA' and 'findLCA'. 
+// I would have ideally liked to have made a new java project, but I wanted all of my commits to be in the same repository.
+
+
 class Node  {
 	
     int data; 
@@ -10,29 +16,29 @@ class Node  {
     } 
 } 
 
-public class LCA {
+public class OldLCA {
 	
 	Node root;
 	
-	Node findLCA(int n1, int n2) {
-		return findLCA(root, n1, n2);
+	Node findOldLCA(int n1, int n2) {
+		return findOldLCA(root, n1, n2);
 	}
 	
-	Node findLCA(Node node, int n1, int n2) {
+	Node findOldLCA(Node Node, int n1, int n2) {
 
-		if (node == null) {
+		if (Node == null) {
 			return null;
 		}
 
-		if (node.data == n1 || node.data == n2) {
-			return node;
+		if (Node.data == n1 || Node.data == n2) {
+			return Node;
 		}
 
-		Node left = findLCA(node.left, n1, n2);
-		Node right = findLCA(node.right, n1, n2);
+		Node left = findOldLCA(Node.left, n1, n2);
+		Node right = findOldLCA(Node.right, n1, n2);
 
 		if (left != null && right != null) {
-			return node;
+			return Node;
 		}
 
 		if (left != null) {
