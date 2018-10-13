@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LCATest" project="Assignment1" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="LCATest" time="0.001">
+    <testcase name="testTwoNodes" classname="LCATest" time="0.0"/>
+    <testcase name="testGet" classname="LCATest" time="0.0"/>
+    <testcase name="testLCA" classname="LCATest" time="0.0"/>
+    <testcase name="testPut" classname="LCATest" time="0.0"/>
+    <testcase name="testNodeConstructor" classname="LCATest" time="0.0"/>
+    <testcase name="testEmptyTree" classname="LCATest" time="0.0"/>
+    <testcase name="testContains" classname="LCATest" time="0.0"/>
+    <testcase name="testPrettyPrint" classname="LCATest" time="0.0"/>
+    <testcase name="testDelete" classname="LCATest" time="0.0"/>
+    <testcase name="testHeight" classname="LCATest" time="0.0"/>
+    <testcase name="testMedian" classname="LCATest" time="0.0"/>
+  </testsuite>
+</testrun>

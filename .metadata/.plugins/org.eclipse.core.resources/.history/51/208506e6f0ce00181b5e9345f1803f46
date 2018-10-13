@@ -19,6 +19,7 @@ public class LCATest {
 	
 	@Test
 	public void testTwoNodes(){
+		
 		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
 		bst.put(1,1);
 		bst.put(5,5);

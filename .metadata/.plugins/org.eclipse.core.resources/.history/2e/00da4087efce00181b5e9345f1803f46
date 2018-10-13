@@ -5,28 +5,6 @@ import org.junit.Test;
 public class LCATest {
 	
 	@Test
-	public void testNodeConstructor(){
-		Node temp = new Node(1);
-		assertNotNull("Testing Node Constructor: ", temp);
-	}
-	
-	@Test
-	public void testEmptyTree() {
-		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
-		assertNull("Find LCA when tree is empty: ", bst.lowestCommonAncestor(bst.root, 1, 2));
-		assertEquals("Find LCA when tree is empty: ", null, bst.lowestCommonAncestor(bst.root, 1, 2) );
-	}
-	
-	@Test
-	public void testTwoNodes(){
-		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
-		bst.put(1,1);
-		bst.put(5,5);
-
-		assertSame("Find LCA of tree with only root and one child: ", 1, bst.lowestCommonAncestor(bst.root,1, 5));	
-	}
-
-	@Test
 	public void testLCA() {
 		
 		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();

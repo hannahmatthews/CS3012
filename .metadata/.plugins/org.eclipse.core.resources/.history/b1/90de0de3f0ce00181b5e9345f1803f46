@@ -19,6 +19,11 @@ public class LCATest {
 	
 	@Test
 	public void testTwoNodes(){
+		
+		//test tree structure:
+		//			1
+		//		5
+
 		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
 		bst.put(1,1);
 		bst.put(5,5);
@@ -26,6 +31,8 @@ public class LCATest {
 		assertSame("Find LCA of tree with only root and one child: ", 1, bst.lowestCommonAncestor(bst.root,1, 5));	
 	}
 
+	
+	
 	@Test
 	public void testLCA() {
 		

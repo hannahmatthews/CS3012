@@ -19,13 +19,33 @@ public class LCATest {
 	
 	@Test
 	public void testTwoNodes(){
+		
+		//test tree structure:
+		//			1
+		//		5
+
 		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
 		bst.put(1,1);
 		bst.put(5,5);
 
 		assertSame("Find LCA of tree with only root and one child: ", 1, bst.lowestCommonAncestor(bst.root,1, 5));	
 	}
-
+	
+	@Test
+	public void testForNonExistentNodes(){
+	
+		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
+		bst.put(1,1);
+		bst.put(2,2);
+		bst.put(6,6);
+		bst.put(8,8);
+		
+		assertSame("Find ancestors of non-existent nodes: ", null, bst.lowestCommonAncestor(bst.root,3, 9));
+		assertSame("Find ancestors of non-existent nodes: ", null, bst.lowestCommonAncestor(bst.root,21, 22));
+	}
+	
+	
+	
 	@Test
 	public void testLCA() {
 		
