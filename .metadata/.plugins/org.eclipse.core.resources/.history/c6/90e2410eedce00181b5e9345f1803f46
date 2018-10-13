@@ -3,6 +3,12 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class LCATest {
+
+	
+
+	
+	
+	
 	
 	@Test
 	public void testDelete() {
@@ -119,52 +125,5 @@ public class LCATest {
 		assertEquals("Testing contains", false, LCA.contains(1));
 		LCA.put(7, 7); 
 		assertEquals("Testing contains", true, LCA.contains(7));
-	}
-	
-	
-	@Test
-	public void testPrettyPrint() {
-		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
-		assertEquals("Checking pretty printing of empty tree",
-				"-null\n", LCA.prettyPrintKeys());
-
-		//  -7
-		//   |-3
-		//   | |-1
-		//   | | |-null
-		LCA.put(7, 7);       //   | |  -2
-		LCA.put(8, 8);       //   | |   |-null
-		LCA.put(3, 3);       //   | |    -null
-		LCA.put(1, 1);       //   |  -6
-		LCA.put(2, 2);       //   |   |-4
-		LCA.put(6, 6);       //   |   | |-null
-		LCA.put(4, 4);       //   |   |  -5
-		LCA.put(5, 5);       //   |   |   |-null
-		//   |   |    -null
-		//   |    -null
-		//    -8
-		//     |-null
-		//      -null
-
-		String result = 
-				"-7\n" +
-						" |-3\n" + 
-						" | |-1\n" +
-						" | | |-null\n" + 
-						" | |  -2\n" +
-						" | |   |-null\n" +
-						" | |    -null\n" +
-						" |  -6\n" +
-						" |   |-4\n" +
-						" |   | |-null\n" +
-						" |   |  -5\n" +
-						" |   |   |-null\n" +
-						" |   |    -null\n" +
-						" |    -null\n" +
-						"  -8\n" +
-						"   |-null\n" +
-						"    -null\n";
-		assertEquals("Checking pretty printing of non-empty tree", result, LCA.prettyPrintKeys());
-
 	}
 }

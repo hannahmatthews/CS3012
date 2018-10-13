@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class LCATest {
+
 	
 	@Test
 	public void testDelete() {
@@ -166,5 +167,10 @@ public class LCATest {
 						"    -null\n";
 		assertEquals("Checking pretty printing of non-empty tree", result, LCA.prettyPrintKeys());
 
+
 	}
+	
+	
+	
+	
 }

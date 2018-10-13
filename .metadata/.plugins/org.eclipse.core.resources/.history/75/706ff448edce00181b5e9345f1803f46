@@ -15,6 +15,16 @@ public class LCA <Key extends Comparable<Key>, Value>{
 			this.N = N;
 		}
 	}
+
+	
+
+	
+	
+	
+	
+	
+	
+	
 	
 	public boolean isEmpty() { 
 		return size() == 0; 
@@ -278,4 +288,53 @@ public class LCA <Key extends Comparable<Key>, Value>{
 		return node;
 	}
 	
+	
+	
+	public Key lowestCommonAncestor (Node node, Key key1, Key key2){
+		if (node == null)
+			return null;
+		if (node.key == key1) {
+			return node.key;
+		}
+		if (node.key == key2) {
+			return node.key;
+		}
+		int cmp1 = node.key.compareTo(key1);
+		int cmp2 = node.key.compareTo(key2);
+
+		if (cmp1 >= 0 && cmp2 >= 0)
+			return lowestCommonAncestor(node.left, key1, key2);
+
+		if (cmp1 <= 0 && cmp2 <= 0)
+			return lowestCommonAncestor(node.right, key1, key2);
+
+		return node.key;
+	}
+
+	@Test
+	public void testLCA() {
+		
+		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
+		
+		assertSame("Testing LCA for null root", null, bst.lowestCommonAncestor(bst.root, 1, 2));
+		
+		bst.put(7, 7);   //        _7_
+		bst.put(8, 8);   //      /     \
+		bst.put(3, 3);   //    _3_      8
+		bst.put(1, 1);   //  /     \
+		bst.put(2, 2);   // 1       6
+		bst.put(6, 6);   //  \     /
+		bst.put(4, 4);   //   2   4
+		bst.put(5, 5);   //        \
+		//        				 	5
+		assertSame("Testing LCA left side", 3, bst.lowestCommonAncestor(bst.root, 2,6));
+		assertSame("Testing LCA right side", 7, bst.lowestCommonAncestor(bst.root, 8,3));
+		assertSame("Testing LCA where LCA is one of the nodes", 7, bst.lowestCommonAncestor(bst.root, 7,8));
+		assertSame("Testing LCA where LCA is one of the nodes", 7, bst.lowestCommonAncestor(bst.root, 3,7));
+	}
+	
+	
+	
+	
+
 }
